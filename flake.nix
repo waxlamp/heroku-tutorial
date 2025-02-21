@@ -13,6 +13,7 @@
         buildInputs = with pkgs; [
           heroku
           git
+          python310Packages.python
         ];
       };
   };
