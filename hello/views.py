@@ -3,14 +3,17 @@ from django.http import HttpResponse
 
 from .models import Greeting
 
+import os
 import requests
 
 # Create your views here.
 
 
 def index(request):
+    times = int(os.environ.get('TIMES', 3))
+
     r = requests.get('https://httpbin.org/status/418', timeout=10)
-    return HttpResponse(f'<pre>{r.text}</pre>')
+    return HttpResponse(f'<pre>{r.text * times}</pre>')
 
 
 def db(request):
