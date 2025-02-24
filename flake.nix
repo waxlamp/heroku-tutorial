@@ -13,6 +13,7 @@
         buildInputs = with pkgs; [
           heroku
           git
+          postgresql
           python310Packages.python
         ];
       };
